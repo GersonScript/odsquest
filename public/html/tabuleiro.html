@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo ODS QUEST</title>
+    <link rel="stylesheet" href="../css/tabuleiro.css" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="grade-container">
+      <div id="escurecer"></div>
+      <div class="presente">
+        <div class="caixa">
+          <div class="fita"></div>
+        </div>
+        <div class="container">
+          <div class="laco">
+            <div class="volta esq"></div>
+            <div class="volta"></div>
+          </div>
+
+          <div class="topo">
+            <div class="fita"></div>
+          </div>
+        </div>
+        <div id="mensagem"></div>
+      </div>
+
+      <div id="perguntas">
+        <div id="pergunta-texto"></div>
+        <div id="alternativas">
+          <label>
+            <input
+              type="radio"
+              name="alternativa"
+              id="alternativaA"
+              value="a"
+            />
+            <span id="labelA"></span>
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="alternativa"
+              id="alternativaB"
+              value="b"
+            />
+            <span id="labelB"></span>
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="alternativa"
+              id="alternativaC"
+              value="c"
+            />
+            <span id="labelC"></span>
+          </label>
+        </div>
+        <div id="cronometro">00:00:00</div>
+        <button id="enviarResposta">Enviar Resposta</button>
+      </div>
+      <div class="item inicio"><img src="../img/cas1.png" alt="Inicio" /></div>
+      <!-- caminho da imagem esta errao -->
+      <div class="item od1">
+        <img src="../img/casa2.png" alt="Objetivo 1" />
+      </div>
+      <div class="item od2">
+        <img src="../img/casa3.png" alt="Objetivo 2" />
+      </div>
+      <div class="item od3">
+        <img src="../img/casa4.png" alt="Objetivo 3" />
+      </div>
+      <div class="item od4">
+        <img src="../img/casa5.png" alt="Objetivo 4" />
+      </div>
+      <div class="item od5">
+        <img src="../img/casa6.png" alt="Objetivo 5" />
+      </div>
+      <div class="item od6">
+        <img src="../img/casa8.png" alt="Objetivo 6" />
+      </div>
+      <div class="item od7">
+        <img src="../img/casa9.png" alt="Objetivo 7" />
+      </div>
+      <div class="item od8">
+        <img src="../img/casa10.png" alt="Objetivo 8" />
+      </div>
+      <div class="item od9">
+        <img src="../img/casa12.png" alt="Objetivo 9" />
+      </div>
+      <div class="item od10">
+        <img src="../img/casa13.png" alt="Objetivo 10" />
+      </div>
+      <div class="item od11">
+        <img src="../img/casa14.png" alt="Objetivo 11" />
+      </div>
+      <div class="item od12">
+        <img src="../img/casa16.png" alt="Objetivo 12" />
+      </div>
+      <div class="item od13">
+        <img src="../img/casa17.png" alt="Objetivo 13" />
+      </div>
+      <div class="item od14">
+        <img src="../img/casa18.png" alt="Objetivo 14" />
+      </div>
+      <div class="item od15">
+        <img src="../img/casa19.png" alt="Objetivo 15" />
+      </div>
+      <div class="item od16">
+        <img src="../img/casa20.png" alt="Objetivo 16" />
+      </div>
+      <div class="item coringa4">
+        <img src="../img/ods.png" alt="Coringa 4" />
+      </div>
+      <div class="item od17">
+        <img src="../img/casa21.png" alt="Objetivo 17" />
+      </div>
+      <div class="item fim"><img src="../img/casa22.png" alt="Fim" /></div>
+      <div class="item coringa1">
+        <img src="../img/ods.png" alt="Coringa 1" />
+      </div>
+      <div class="item coringa2">
+        <img src="../img/ods.png" alt="Coringa 2" />
+      </div>
+      <div class="item coringa3">
+        <img src="../img/ods.png" alt="Coringa 3" />
+      </div>
+      <div class="item agenda20301">
+        <img src="../img/ods.png" alt="Agenda 20301" />
+      </div>
+      <div class="item agenda20302">
+        <img src="../img/ods.png" alt="Agenda 20302" />
+      </div>
+      <div class="item agenda20303">
+        <img src="../img/ods.png" alt="Agenda 20303" />
+      </div>
+      <div class="tela-jogo" id="quadrado">
+        <div id="container-dado" class="container-dado">
+          <div id="cubo" class="cubo">
+            <div class="face face1">
+              <img src="../dado/face1.png" alt="Face 1" />
+            </div>
+            <div class="face face2">
+              <img src="../dado/face2.png" alt="Face 2" />
+            </div>
+            <div class="face face3">
+              <img src="../dado/face3.png" alt="Face 3" />
+            </div>
+            <div class="face face4">
+              <img src="../dado/face4.png" alt="Face 4" />
+            </div>
+            <div class="face face5">
+              <img src="../dado/face5.png" alt="Face 5" />
+            </div>
+            <div class="face face6">
+              <img src="../dado/face6.png" alt="Face 6" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="marcadorRoboContainer" class="item marcador-robo-1">
+        <img src="../img/robo.png" id="marcadorRobo" alt="marcador do robô" />
+      </div>
+      <div id="marcadorUsuarioContainer">
+        <img
+          src="../img/usuario.png"
+          id="marcadorUsuario"
+          alt="marcador do usuário"
+        />
+      </div>
+    </div>
+    <script type="module" src="../js/jogo.js"></script>
+  </body>
+</html>
