@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ODS QUEST</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./public/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Minha Logo</div>
+        <div class="menu-icon" id="menu-icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="./public/html/login.html">Criar Conta / login</a></li>
+          <li>
+            <a href="https://portal.stf.jus.br/hotsites/agenda-2030/">
+              Agenda 2030
+            </a>
+          </li>
+          <li><a href="./public/html/perfio.html">Perfío</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article id="article">
+        <div id="conteiner">
+          <button class="btn-iniciar" id="btn-iniciar">
+            <span class="btn-icon">
+              <i class="fas fa-play"></i>
+            </span>
+            <span class="btn-text">Iniciar Jogo</span>
+          </button>
+          <button class="btn-configuracao" id="btn-configuracao">
+            <span class="btn-icon">
+              <i class="fas fa-cog"></i>
+            </span>
+            <span class="btn-text">Configurações</span>
+          </button>
+
+          <button class="btn-regras" id="btn-regras">
+            <span class="btn-icon">
+              <i class="fas fa-book-open"></i>
+            </span>
+            <span class="btn-text">Leia as Regras do Jogo</span>
+          </button>
+        </div>
+      </article>
+
+      <aside>
+        <img id="logo" src="./public/img/logo.png" alt="Logo" />
+      </aside>
+    </main>
+    <div id="game-settings-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Configurações de Jogo</h2>
+        </div>
+
+        <div class="modal-body">
+          <div class="left-column">
+            <p>Escolha como você deseja jogar:</p>
+            <ul class="game-options">
+              <li>
+                <label for="solo">
+                  Jogar Sozinho:
+                  <input type="checkbox" id="solo" class="option-checkbox" />
+                </label>
+              </li>
+              <li>
+                <label for="robot">
+                  Jogar Contra Robô:
+                  <input type="checkbox" id="robot" class="option-checkbox" />
+                </label>
+              </li>
+              <li>
+                <label for="friends">
+                  Jogar com Amigos:
+                  <input type="checkbox" id="friends" class="option-checkbox" />
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna para opções de amigos à direita -->
+          <div id="friends-options" class="right-column hidden">
+            <div class="create-room hidden">
+              <button id="create-room-btn">Criar Sala</button>
+            </div>
+            <div id="codigo-sala" class="hidden"></div>
+            <div class="join-room hidden">
+              <button id="join-room-btn">Entrar na Sala</button>
+            </div>
+            <div id="campo-codigo" class="hidden">
+              <input
+                type="text"
+                id="room-code-input"
+                placeholder="Código da sala"
+              />
+            </div>
+          </div>
+        </div>
+
+        <button id="close-settings" class="close-btn">Fechar</button>
+      </div>
+    </div>
+
+    <script src="./public/js/script.js"></script>
+  </body>
+</html>
