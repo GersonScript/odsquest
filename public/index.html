@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ODS QUEST</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/resposividade.css" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">ODS QUEST</div>
+        <div class="menu-icon" id="menu-icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="#" id="criar-conta"
+              >Criar Conta / Login <i class="fas fa-user-plus"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://portal.stf.jus.br/hotsites/agenda-2030/"
+              >Agenda 2030 <i class="fas fa-calendar-alt"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" id="perfil">Perfil <i class="fas fa-user"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article id="article">
+        <div id="conteiner">
+          <button class="btn-iniciar" id="btn-iniciar">
+            <span class="btn-icon">
+              <i class="fas fa-play"></i>
+            </span>
+            <span class="btn-text">Iniciar Jogo</span>
+          </button>
+          <button class="btn-regras" id="btn-regras">
+            <span class="btn-icon">
+              <i class="fas fa-book-open"></i>
+            </span>
+            <span class="btn-text">Leia as Regras do Jogo</span>
+          </button>
+          <button class="btn-configuracao" id="btn-configuracao">
+            <span class="btn-icon">
+              <i class="fas fa-cog"></i>
+            </span>
+            <span class="btn-text">Configurações</span>
+          </button>
+        </div>
+      </article>
+
+      <aside>
+        <img id="logo" src="./img/logo.png" alt="Logo" />
+      </aside>
+    </main>
+    <div id="game-settings-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Configurações de Jogo</h2>
+        </div>
+
+        <div class="modal-body">
+          <div class="left-column">
+            <ul class="game-options">
+              <li>
+                <label for="solo">Jogar Sozinho:</label>
+                <input type="checkbox" id="solo" class="option-checkbox" />
+              </li>
+              <li>
+                <label for="robot">Jogar Contra Robô:</label>
+                <input type="checkbox" id="robot" class="option-checkbox" />
+              </li>
+              <li>
+                <label for="friends">Jogar com Amigos:</label>
+                <input type="checkbox" id="friends" class="option-checkbox" />
+              </li>
+            </ul>
+          </div>
+
+          <div id="friends-options" class="right-column hidden">
+            <div id="create-room" class="create-room">
+              <button id="join-room-btn">
+                <i class="fas fa-sign-in-alt"></i>
+                <span class="btn-text">Entrar na Sala</span>
+              </button>
+            </div>
+            <div id="codigo-sala" class="hidden">
+              Código da Sala: <strong>12345</strong>
+            </div>
+            <div id="join-room" class="join-room">
+              <button id="create-room-btn">
+                <i class="fas fa-plus-circle"></i>
+                <span class="btn-text">Criar Sala</span>
+              </button>
+            </div>
+            <div id="campo-codigo" class="hidden">
+              <input
+                type="text"
+                id="room-code-input"
+                placeholder="Código da sala"
+              />
+            </div>
+          </div>
+        </div>
+        <button id="close-settings" class="close-btn">
+          <i class="fas fa-times"></i>
+          <span class="btn-text">Fechar</span>
+        </button>
+      </div>
+    </div>
+    <div class="profile-container">
+      <div class="profile-header">
+        <img src="./img/foto.jpg" alt="Foto do Usuário" />
+        <h1>Gérson</h1>
+      </div>
+      <!-- Botão de fechar (X) -->
+      <button class="close-btn-perfil" id="close-profile">X</button>
+
+      <div class="stats-container">
+        <div class="stats-box">
+          <h2>Desempenho</h2>
+          <p>Perguntas Respondidas: 22</p>
+          <p>Perguntas Acertadas: 18</p>
+          <p>Perguntas Erradas: 6</p>
+        </div>
+        <div class="level-container">
+          <div class="level-box">
+            <img src="./img/trofel.png" alt="Troféu" />
+          </div>
+          <div class="level-text">Nível Atual: 1</div>
+        </div>
+        <div class="stats-box">
+          <h2>Histórico de Jogos</h2>
+          <p>Partida 1: 10 acertos, 2 erros</p>
+          <p>Partida 2: 8 acertos, 4 erros</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-login">
+      <button class="close-btn-perfil" id="close-login">X</button>
+      <div id="signin">
+        <h1>Login</h1>
+        <div id="titleLogin">
+          <label for="emailEntrar">E-mail:</label>
+          <input
+            type="email"
+            name="email"
+            id="emailEntrar"
+            placeholder="Digite seu e-mail"
+            required
+          />
+          <button id="submitBtn" aria-label="Enviar código">
+            Enviar código <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <input
+          type="number"
+          name="codigo"
+          id="codigoEmail"
+          placeholder="Insira o código"
+          required
+        />
+        <button id="entarConta" style="display: none">
+          Entrar <i class="fas fa-user-check"></i>
+        </button>
+      </div>
+
+      <!-- Cadastro -->
+      <div id="signup">
+        <h1>Cria Conta</h1>
+        <label for="usuario">Nick:</label>
+        <input
+          type="text"
+          name="usuario"
+          id="usuario"
+          placeholder="Escolha um apelido"
+          required
+        />
+        <label for="emailCriar">E-mail:</label>
+        <input
+          type="email"
+          name="emailCriar"
+          id="emailCriar"
+          placeholder="Digite seu e-mail"
+          required
+        />
+        <label for="idade">Idade:</label>
+        <input
+          type="number"
+          name="idade"
+          id="idade"
+          min="1"
+          max="120"
+          placeholder="Digite sua idade"
+          required
+        />
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
+          <option value="">Selecione seu estado</option>
+          <option value="Acre (AC)">Acre (AC)</option>
+          <option value="Alagoas (AL)">Alagoas (AL)</option>
+          <option value="Amapá (AP)">Amapá (AP)</option>
+          <option value="Amazonas (AM)">Amazonas (AM)</option>
+          <option value="Bahia (BA)">Bahia (BA)</option>
+          <option value="Ceará (CE)">Ceará (CE)</option>
+          <option value="Distrito Federal (DF)">Distrito Federal (DF)</option>
+          <option value="Espírito Santo (ES)">Espírito Santo (ES)</option>
+          <option value="Goiás (GO)">Goiás (GO)</option>
+          <option value="Maranhão (MA)">Maranhão (MA)</option>
+          <option value="Mato Grosso (MT)">Mato Grosso (MT)</option>
+          <option value="Mato Grosso do Sul (MS)">
+            Mato Grosso do Sul (MS)
+          </option>
+          <option value="Minas Gerais (MG)">Minas Gerais (MG)</option>
+          <option value="Pará (PA)">Pará (PA)</option>
+          <option value="Paraíba (PB)">Paraíba (PB)</option>
+          <option value="Paraná (PR)">Paraná (PR)</option>
+          <option value="Pernambuco (PE)">Pernambuco (PE)</option>
+          <option value="Piauí (PI)">Piauí (PI)</option>
+          <option value="Rio de Janeiro (RJ)">Rio de Janeiro (RJ)</option>
+          <option value="Rio Grande do Norte (RN)">
+            Rio Grande do Norte (RN)
+          </option>
+          <option value="Rio Grande do Sul (RS)">Rio Grande do Sul (RS)</option>
+          <option value="Rondônia (RO)">Rondônia (RO)</option>
+          <option value="Roraima (RR)">Roraima (RR)</option>
+          <option value="Santa Catarina (SC)">Santa Catarina (SC)</option>
+          <option value="São Paulo (SP)">São Paulo (SP)</option>
+          <option value="Sergipe (SE)">Sergipe (SE)</option>
+          <option value="Tocantins (TO)">Tocantins (TO)</option>
+        </select>
+
+        <label for="nome_escola">Nome da Escola:</label>
+        <input
+          type="text"
+          id="nome_escola"
+          name="nome_escola"
+          placeholder="Digite o nome da escola"
+          required
+        />
+        <label for="cidade">Cidade:</label>
+        <input
+          type="text"
+          id="cidade"
+          name="cidade"
+          placeholder="Digite sua cidade"
+          required
+        />
+        <label for="municipio">Município:</label>
+        <input
+          type="text"
+          id="municipio"
+          name="municipio"
+          placeholder="Digite seu município"
+          required
+        />
+        <label for="ano">Ano na Escola:</label>
+        <select id="ano" name="ano" required>
+          <option value="">Selecione o ano</option>
+          <!-- Ensino Fundamental Anos Iniciais -->
+          <option value="1º Ano do Ensino Fundamental">
+            1º Ano do Ensino Fundamental
+          </option>
+          <option value="2º Ano do Ensino Fundamental">
+            2º Ano do Ensino Fundamental
+          </option>
+          <option value="3º Ano do Ensino Fundamental">
+            3º Ano do Ensino Fundamental
+          </option>
+          <option value="4º Ano do Ensino Fundamental">
+            4º Ano do Ensino Fundamental
+          </option>
+          <option value="5º Ano do Ensino Fundamental">
+            5º Ano do Ensino Fundamental
+          </option>
+          <!-- Ensino Fundamental Anos Finais -->
+          <option value="6º Ano do Ensino Fundamental">
+            6º Ano do Ensino Fundamental
+          </option>
+          <option value="7º Ano do Ensino Fundamental">
+            7º Ano do Ensino Fundamental
+          </option>
+          <option value="8º Ano do Ensino Fundamental">
+            8º Ano do Ensino Fundamental
+          </option>
+          <option value="9º Ano do Ensino Fundamental">
+            9º Ano do Ensino Fundamental
+          </option>
+          <!-- Ensino Médio -->
+          <option value="1º Ano do Ensino Médio">1º Ano do Ensino Médio</option>
+          <option value="2º Ano do Ensino Médio">2º Ano do Ensino Médio</option>
+          <option value="3º Ano do Ensino Médio">3º Ano do Ensino Médio</option>
+        </select>
+
+        <button id="criarConta" aria-label="Entrar na conta">
+          Criar Conta <i class="fas fa-user-check"></i>
+        </button>
+      </div>
+      <div class="toggle-container">
+        <span id="toggle-text">Ainda não tem conta?</span>
+        <a id="toggle-link" href="#">Criar conta</a>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

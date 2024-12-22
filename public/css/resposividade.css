@@ -1,0 +1,120 @@
+/* Responsividade para dispositivos móveis (celular) */
+@media (max-width: 768px) {
+  /* Definir layout padrão para celular */
+  body {
+    display: none;
+  }
+  .landscape-message {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+}
+
+/* Responsividade para celular em modo paisagem */
+@media (max-width: 768px) and (orientation: landscape) {
+  body {
+    display: block;
+  }
+
+  .landscape-message {
+    display: none;
+  }
+
+  main {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  #article {
+    width: 50%;
+  }
+
+  #conteiner {
+    width: 90%;
+    height: 80%;
+  }
+
+  .btn-iniciar,
+  .btn-regras {
+    width: 220px;
+    height: 70px;
+    font-size: 20px;
+  }
+
+  #logo {
+    max-width: 100%;
+  }
+  .modal-content {
+    background: linear-gradient(
+      135deg,
+      rgba(26, 115, 232, 0.7),
+      rgba(3, 201, 203, 0.7),
+      rgba(75, 0, 130, 0.7)
+    );
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: clamp(70%, 90%, 800px);
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #333333;
+    text-align: center;
+    transform: scale(0.95);
+    animation: fadeIn 0.3s ease forwards;
+  }
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  body {
+    display: block;
+  }
+
+  .landscape-message {
+    display: none;
+  }
+
+  main {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  #article {
+    width: 50%;
+  }
+
+  #conteiner {
+    width: 90%;
+    height: 80%;
+  }
+
+  .btn-iniciar,
+  .btn-regras {
+    width: 220px;
+    height: 70px;
+    font-size: 20px;
+  }
+
+  #logo {
+    max-width: 80%;
+  }
+  .modal-content {
+    background: linear-gradient(
+      135deg,
+      rgba(26, 115, 232, 0.7),
+      rgba(3, 201, 203, 0.7),
+      rgba(75, 0, 130, 0.7)
+    );
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: clamp(70%, 90%, 800px);
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #333333;
+    text-align: center;
+    transform: scale(0.95);
+    animation: fadeIn 0.3s ease forwards;
+  }
+}
